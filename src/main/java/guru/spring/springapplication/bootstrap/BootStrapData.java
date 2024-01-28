@@ -4,6 +4,7 @@ import guru.spring.springapplication.model.Author;
 import guru.spring.springapplication.model.Book;
 import guru.spring.springapplication.repositories.AuthorRepository;
 import guru.spring.springapplication.repositories.BookRepository;
+import guru.spring.springapplication.repositories.PublisherRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -11,10 +12,12 @@ import org.springframework.stereotype.Component;
 public class BootStrapData implements CommandLineRunner {
     private final AuthorRepository authorRepository;
     private final BookRepository bookRepository;
+    private final PublisherRepository publisherRepository;
 
-    public BootStrapData(AuthorRepository authorRepository, BookRepository bookRepository) {
+    public BootStrapData(AuthorRepository authorRepository, BookRepository bookRepository, PublisherRepository publisherRepository) {
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
+        this.publisherRepository = publisherRepository;
     }
 
     @Override
